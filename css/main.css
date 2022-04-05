@@ -1,6 +1,23 @@
-.progress-bar{
+.question-bar{
     background-color: black;
-    width: 50px;
+    width: 20%;
     height: 100%;
-    display: none;
+    float: left;
+    min-width: 40px;
+    color: white;
+}
+.main-question-screen{
+    width: 80%;
+    display: inline-block;
+}
+#question-board{
+    background-color: yellow;
+    border-radius: 5px;
+    border: 5px solid lightblue;
+    width: 100%;
+    height: 400px;
+}
+#answer-board{
+    width: 80%;
+    height: 100%;
 }
