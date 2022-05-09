@@ -47,3 +47,17 @@
 #open-question-bar{
     float: left;
 }
+.nav-OS{
+    margin-left: 30px;
+    color:cadetblue;
+    text-decoration: none;
+    padding-top: 100px;
+}
+.modal{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.25);
+    display: block;
+    position: absolute;
+}
+
