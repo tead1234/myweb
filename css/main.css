@@ -56,8 +56,9 @@
 .modal{
     height: 100%;
     width: 100%;
-    background-color: rgba(255,255,255,0.25);
-    display: block;
-    position: absolute;
+    background-color: rgba(54, 9, 9, 0.25);
+    z-index: 100;
+    display: inline;
+    position: fixed;
 }
 
