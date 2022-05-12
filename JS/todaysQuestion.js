@@ -13,6 +13,7 @@ var score = 0
 // 각 카테고리별 구분 키가 필요함
 let key = 0
 var rand = 0
+let progValue = [0,0,0,0]
 // 질문생성
 // nav매뉴중 버튼을 누르면 랜덤으로 질문을 생성하도록 구성
 $('#nav-OS').click(()=>{
@@ -100,3 +101,15 @@ function saveAnswer(문항, 제출정답){
     // 로컬스토리지에 저장
     myStorage.setItem(문항, 제출정답);
 }   
+// 점수별 진행도 부분을 변경해주는 함수
+// ket값에 따라 화면에 나오는 멘트와 현재까지 진행도를 저장해놨다가 나와야함
+function changeProgressBar(카테고리전체문제수){
+    // 맞춘갯수는 어떻게 가져올까???
+       
+            // 맞춘갯수 / 전체 문제수 == 요걸 value값으로 넣어줘야됨
+
+}
+// 저장된 답안을 보여주는 함수
+function showSavedAnswer(){
+
+}
