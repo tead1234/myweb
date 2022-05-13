@@ -1,7 +1,7 @@
 //c 버튼을 누르면 두 질문창과 답변창이 80%로 작아져야됨
 // 질문하고 답을 미리 저장해놨다가 
 const question_OS = ["프로세스와 스레드의 차이?","멀티 스레드의 장점과 단점?","ㅇ","1", "3", "5"]
-const question_DataBase = ["스키마란 무엇인가?"]
+const question_DataBase = ["스키마란 무엇인가?","관계형 데이터베이스를 설명해보시오"]
 const question_Algorithm = ["시간복잡도란 무엇인가?"]
 const question_Network = ["TCP와 IP의 차이?"]
 const answer_OS = [["code","data","heap","최소","작업","단위","인스턴스","메모리","동적","할당"],["하나의", "프로세스", "다수의","여러개", "스레드","교착상태","단위","작업","자원"]]
@@ -12,33 +12,36 @@ let sucess_answer = []
 var score = 0
 // 각 카테고리별 구분 키가 필요함
 let key = 0
-var rand = 0
+let rand = 0
 let progValue = [0,0,0,0]
 let 답안리스트 = null
-let 질문리스트 = null
+let 질문리스트 = []
 // 질문생성
 // nav매뉴중 버튼을 누르면 랜덤으로 질문을 생성하도록 구성
 $('#nav-OS').click(()=>{
-    
+    $('#question').html("")
     rand = Math.floor(Math.random() * question_OS.length)
     $('#question').html(question_OS[rand])
     key = 0
     changeProgressBar(key)
 })
 $('#nav-Data').click(()=>{
-    rand = Math.floor(Math.random() * question_OS.length)
+    $('#question').html("")
+    rand = Math.floor(Math.random() * question_DataBase.length)
     $('#question').html(question_DataBase[rand])
     key = 1
     changeProgressBar(key)
 })
 $('#nav-Net').click(()=>{
-    rand = Math.floor(Math.random() * question_OS.length)
+    $('#question').html("")
+    rand = Math.floor(Math.random() * question_Network.length)
     $('#question').html(question_Network[rand])
     key = 2
     changeProgressBar(key)
 })
 $('#nav-Algo').click(()=>{
-    rand = Math.floor(Math.random() * question_OS.length)
+    $('#question').html("")
+    rand = Math.floor(Math.random() * question_Algorithm.length)
     $('#question').html(question_Algorithm[rand])
     key = 3
     changeProgressBar(key)
@@ -88,7 +91,9 @@ $("#submitAnswer").click(()=>{
         }
     }
     if(score>50){
-        saveAnswer(질문리스트[rand],answer)
+        if(saveAnswer(질문리스트[rand],answer)){
+            return
+        }
         passOrfail();
         //  답안리스트 == 이놈은 답안
 
@@ -106,9 +111,10 @@ function passOrfail(){
 }
 function saveAnswer(문항, 제출정답){
     // 통과된 문항기록
-    if(문항 in sucess_answer){
+    if(sucess_answer.includes(문항)){
         alert('이미 맞춘문제입니다.')
-        return
+        
+        return true
     }
     sucess_answer.push(문항);
     // 로컬스토리지에 저장
