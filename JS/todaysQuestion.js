@@ -6,8 +6,9 @@ const question_Algorithm = ["시간복잡도란 무엇인가?"]
 const question_Network = ["TCP와 IP의 차이?"]
 const answer_OS = [["code","data","heap","최소","작업","단위","인스턴스","메모리","동적","할당"],["하나의", "프로세스", "다수의","여러개", "스레드","교착상태","단위","작업","자원"]]
 const answer_DataBase = [["스키마","1","2","3","4","5", "6"]]
-const answer_Algorithm = []
+const answer_Algorithm = [["1","2","3","4","5","6"]]
 const answer_Network = []
+// 답안이 a입니다 >> 유사답안 a로 볼수 있습니다. >> 머신러닝이용해서 유사답안도 정답으로 인정해주는 알고리즘
 let sucess_answer = []
 var score = 0
 // 각 카테고리별 구분 키가 필요함
@@ -50,8 +51,6 @@ $('#nav-Algo').click(()=>{
 
 // 저장부분
 myStorage = window.localStorage;
-
-
 // 진행도 보이기/ 닫기
 $('#open-question-bar').click(()=>{
     if($('.question-bar').css('display')== 'none'){
@@ -96,12 +95,15 @@ $("#submitAnswer").click(()=>{
         }
         passOrfail();
         //  답안리스트 == 이놈은 답안
-
+        
         /// 맞추면 맞춘 갯수를 저장하는건 여기다가 따로 만들어야 할듯
         checkSuccessQuestion(key)
         changeProgressBar(key)
+        countAnswer();
+        update();
     }else{
-        alert("점수 미달입니다.")
+        alert("점수 미달입니다.");
+        update_fail();
     }
 
     score = 0
@@ -145,6 +147,38 @@ function checkSuccessQuestion(key){
     }
 }
 // 저장된 답안을 보여주는 함수
-function showSavedAnswer(){
+function showSavedAnswer(key){
 
+}
+// 맞추면 맞춘 갯수 올라가는 카운터
+function countAnswer(){
+    var numOfAnswer = document.getElementById("success-answer-count").innerHTML
+    numOfAnswer = parseInt(numOfAnswer)
+    numOfAnswer += 1
+    document.getElementById("success-answer-count").innerHTML = numOfAnswer;
+}   
+function update(){
+    var point = document.getElementById("score").innerHTML
+    point = parseInt(point)
+    point += 10;
+    document.getElementById("score").innerHTML = point
+}
+function update_fail(){
+    var point = document.getElementById("score").innerHTML
+    point = parseInt(point)
+    point -= 10;
+    document.getElementById("score").innerHTML = point
+}
+// 맞춘문제 페이지 기록하기
+function getAnswerList(){
+    for(let i =0; i < myStorage.length; i ++){
+        let key = sucess_answer[i]
+        let sa = myStorage.getItem(key)
+        let sen = `<tr>
+        <td>${key}</td>
+        <td>${sa}</td>
+        </tr>`
+        $('#tb').after(sen);
+    }
+   
 }

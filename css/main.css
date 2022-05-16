@@ -13,6 +13,7 @@
     width: 20%;
     height: 400px;
     min-width: 40px;
+    padding-top: 30px;
     color: white;
     display: inline;
     float: left;
@@ -61,4 +62,23 @@
     display: inline;
     position: fixed;
 }
-
+#success-answer a{
+    padding-top: 70px;
+    margin-left: 30%;
+    color: white;
+    text-decoration: none;
+}
+#success-answer-count{
+    text-decoration: none;
+    color: white;
+}
+#score{
+    margin-left: 25%;
+    margin-top: 80px;
+    font-family:fantasy;
+    font-size: 60px;
+}
+table{
+    border: 2;
+    size: 4px;
+}
