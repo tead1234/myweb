@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     
     <title>맞춘 문제들</title>
 </head>
@@ -12,12 +13,26 @@
     <div style="background-color: rgba(233, 223, 223, 0.5)" "border-radius : 4px solid purple">
         <table id="tb" border="2" width = 100%>
             <th colspan="2">맞춘문제</th>
-            <tr>
+            <tr id="table-content">
                 <td>문제</td>
                 <td>제출답안</td>
             </tr>
         </table>
     </div>
+    <script>
+        // 자바스크립트를 같이 써도 공유가 되질않네
+        if(typeof(localStorage) !== "undefined"){
+            
+            mystorage = window.localStorage;
+            for(let i =0; i < mystorage.length; i ++){
+                let problemAndAnswer = JSON.parse(localStorage.getItem(i));
+                let sen =  `<tr><td>${problemAndAnswer[0]}</td><td>${problemAndAnswer[1]}</td></tr>`
+                $('#table-content').after(sen);
+            }
+            
+        }        
+
+    </script>
     
     <script src="JS/todaysQuestion.js"></script>
 </body>

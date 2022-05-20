@@ -13,10 +13,12 @@ let sucess_answer = []
 var score = 0
 // 각 카테고리별 구분 키가 필요함
 let key = 0
+let local_key = 0
 let rand = 0
 let progValue = [0,0,0,0]
 let 답안리스트 = null
 let 질문리스트 = []
+
 // 질문생성
 // nav매뉴중 버튼을 누르면 랜덤으로 질문을 생성하도록 구성
 $('#nav-OS').click(()=>{
@@ -120,7 +122,9 @@ function saveAnswer(문항, 제출정답){
     }
     sucess_answer.push(문항);
     // 로컬스토리지에 저장
-    myStorage.setItem(문항, 제출정답);
+    // 이거 키값을 어떻게 해야 하지???
+    myStorage.setItem(local_key,JSON.stringify([문항, 제출정답]));
+    local_key += 1;
 }   
 // 점수별 진행도 부분을 변경해주는 함수
 // ket값에 따라 화면에 나오는 멘트와 현재까지 진행도를 저장해놨다가 나와야함
@@ -170,15 +174,13 @@ function update_fail(){
     document.getElementById("score").innerHTML = point
 }
 // 맞춘문제 페이지 기록하기
-function getAnswerList(){
-    for(let i =0; i < myStorage.length; i ++){
-        let key = sucess_answer[i]
-        let sa = myStorage.getItem(key)
-        let sen = `<tr>
-        <td>${key}</td>
-        <td>${sa}</td>
-        </tr>`
-        $('#tb').after(sen);
-    }
-   
-}
+/// 로컬스토리지 자체는 공유가 되지만, 변수값은 공유가 되지않는다
+// function getAnswerList(){
+//     for(let i =0; i < myStorage.length; i ++){
+        
+//         let local_key = sucess_answer[i];
+//         let sa = myStorage.getItem(local_key)
+//         sen = `<tr><td>${local_key}</td><td>${sa}</td></tr>`
+//         $('#table-content').after(sen);
+//     }
+// }
