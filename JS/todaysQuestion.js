@@ -153,7 +153,11 @@ function checkSuccessQuestion(key){
     }
 }
 // 저장된 답안을 보여주는 함수
-function showSavedAnswer(key){
+function showSavedAnswer(문항){
+    if(sucess_answer.includes(문항)){
+        
+        $("#answer-board").html()
+    }
 
 }
 // 맞추면 맞춘 갯수 올라가는 카운터
