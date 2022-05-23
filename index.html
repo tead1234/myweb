@@ -13,11 +13,11 @@
     
   </head>
 <body style="height: 100%;">
-  <div class="modal">
-    <div class="modal-window">
-      <h2>모달창</h2>
+  <div class="black-background" style="background-color: rgba(0,0,0,0.5)">
+    <div class="white-background">
+          <h3>알림창 입니다.</h3>
     </div>
-    </div>
+  </div>
     <div class="titleBar">
         <img src="img/오늘의 질문.png" style="width: 15%; height: 100px;">
     </div>
@@ -31,24 +31,22 @@
                   </button>
                   <div class="collapse navbar-collapse"  id="navbarNav">
                     <ul class="navbar-nav" style="margin-top: 10px; padding-left: 45%;">
-                        <li class="nav-item dropdown" style="margin-right: 20px; margin-left: 20px;">
+                        <li class="nav-item dropdown" style="margin-right: 5%; margin-left: 5%;">
                           <a class= "nav-OS" href="#" id="nav-OS" role="button"  aria-expanded="false">
                             OS
                           </a>
-                          
                         </li>
-                        <li class="nav-item dropdown" style="margin-right: 20px; margin-left: 20px;">
+                        <li class="nav-item dropdown" style="margin-right: 5%; margin-left: 5%;">
                           <a class= "nav-OS" href="#" id="nav-Data" role="button"  aria-expanded="false">
                             DataBase
                           </a>
-          
                         </li>
-                        <li class="nav-item dropdown" style="margin-right: 20px; margin-left: 20px;">
+                        <li class="nav-item dropdown" style="margin-right: 5%; margin-left: 5%;">
                           <a class="nav-OS" href="#" id="nav-Net" role="button"  aria-expanded="false">
                             NetWork
                           </a>
                         </li>
-                        <li class="nav-item dropdown" style="margin-right: 20px; margin-left: 20px;">
+                        <li class="nav-item dropdown" style="margin-right: 5%; margin-left: 5%;">
                           <a class="nav-OS" href="#" id="nav-Algo" role="button"  aria-expanded="false">
                             Algorithm
                           </a>
@@ -58,14 +56,11 @@
                 </div>
               </nav>
         </header>
-      
-        
         <div class="answerAndQuestion-container">
           <div class="question-bar">
             <p style="text-align: center;">파트별 달성도</p>
             <progress id="progress" value="0" min="0" max="100" style="margin-left: 20px; width:15vw; transition: 2ms; text-align:center;" ></progress>
             <div id = "success-answer">
-              
                 <a href="answerList.html" target="_blank" onclick="getAnswerList()" style="text-align:center;">맞춘갯수 <span id="success-answer-count">0</span></a>
                 <h3 id="score">1000</h3>
               </div>
@@ -74,7 +69,6 @@
             <div id = "question-board">
               <p id="question"></p>
             </div>
-           <!-- 점수랑 맞춘문제 못맞춘 문제보기 -->
           </div>
           <div>
             <textarea name="answer-board" id="answer-board" cols="30" rows="5" placeholder="답을 적어주세요"></textarea>
@@ -84,8 +78,6 @@
           <button type="button" id = "submitAnswer" class="btn btn-primary btn-lg" style="float:right" >제출</button>
           <button type="button"  id="open-question-bar" class="btn btn-primary btn-lg" style="float:right" >진행도보기</button>
         </div>
-
-        
       <script src="JS/todaysQuestion.js"></script>
    
     
