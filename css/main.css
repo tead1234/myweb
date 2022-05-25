@@ -1,10 +1,13 @@
 body{
-    min-width: 600px;
+    min-width: 400px;
 }
 .container{
     height: 100%;
     width: 100%;
     display: inline;
+}
+#nav-bar{
+    z-index: -3;
 }
 .answerAndQuestion-container{
     width: 100%;
@@ -58,14 +61,7 @@ body{
     text-decoration: none;
     padding-top: 100px;
 }
-.modal{
-    height: 100%;
-    width: 100%;
-    background-color: rgba(54, 9, 9, 0.25);
-    z-index: 100;
-    display: inline;
-    position: fixed;
-}
+
 #success-answer a{
     padding-top: 70px;
     margin-left: 30%;
@@ -130,6 +126,9 @@ table{
 }
 /* 800px 이하 모바일크기 */
 @media(max-width:768px){
+    #nav-bar{
+        width: 768px;
+    }
     #score{
         margin-left: 20%;
         margin-top: 80px;
@@ -171,4 +170,8 @@ table{
         top:200px; 
         right: 100px;
     }
+    #btn-container{
+        margin-top: -100px;
+    }
+    
 }
