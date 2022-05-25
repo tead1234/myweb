@@ -95,5 +95,22 @@ table{
     position: fixed;
     width: 100%;
     height: 700px;
+    z-index: 5;
     transform: translateY(-800px);
+}
+.white-background{
+    background-color: white;
+    position: relative;
+    left: 40vw;
+    top: 20vw;
+    width: 30vw;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 300px;
+    
+}
+#ment{
+    top:30px;
+    size: 50px;
+    left: 30px;
 }

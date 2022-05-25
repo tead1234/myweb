@@ -58,8 +58,8 @@ myStorage = window.localStorage;
 // 진행도 보이기/ 닫기
 $('#open-question-bar').click(()=>{
     if($('.question-bar').css('display')== 'none'){
-    $('.main-question-screen').css('width', '80%')
-$('.question-bar').css('display','inline');
+        $('.main-question-screen').css('width', '80%')
+        $('.main-question-screen').animate({width: '80%'}, 500)
 }
     else{
         $('.main-question-screen').animate({width: '100%'}, 500)
@@ -96,8 +96,9 @@ $("#submitAnswer").click(()=>{
         if(saveAnswer(질문리스트[rand],answer)){
             return
         }
+        changeAlert("축하합니다.")
+        $(".black-background").css('transform','translateY(-100px)')
         //  답안리스트 == 이놈은 답안
-        
         /// 맞추면 맞춘 갯수를 저장하는건 여기다가 따로 만들어야 할듯
         checkSuccessQuestion(key)
         changeProgressBar(key)
@@ -105,8 +106,8 @@ $("#submitAnswer").click(()=>{
         update();
     }else{
         //alert("점수 미달입니다.");
-        $("#answer-board").html("틀렸음")
-        $(".black-background").css('transform','translateY(1400px)')
+        changeAlert("응 다시해")
+        $(".black-background").css('transform','translateY(-100px)')
 
         update_fail();
     }
@@ -118,7 +119,6 @@ function saveAnswer(문항, 제출정답){
     // 통과된 문항기록
     if(sucess_answer.includes(문항)){
         alert('이미 맞춘문제입니다.')
-        
         return true
     }
     sucess_answer.push(문항);
@@ -154,7 +154,6 @@ function checkSuccessQuestion(key){
 // 저장된 답안을 보여주는 함수
 function showSavedAnswer(문항){
     if(sucess_answer.includes(문항)){
-        
         $("#answer-board").html()
     }
 
@@ -177,6 +176,15 @@ function update_fail(){
     point = parseInt(point)
     point -= 10;
     document.getElementById("score").innerHTML = point
+}
+function closeAlert(창){
+    if(창.click){
+        $(".black-background").css('transform','translateY(-800px)')
+    }
+}
+function changeAlert(멘트){
+    
+    $('#ment').html(멘트);
 }
 // 맞춘문제 페이지 기록하기
 /// 로컬스토리지 자체는 공유가 되지만, 변수값은 공유가 되지않는다

@@ -15,13 +15,14 @@
 <body style="height: 100%;">
   <div class="black-background" style="background-color: rgba(0,0,0,0.5)">
     <div class="white-background">
-          <h3>알림창 입니다.</h3>
+          <h3 id="ment">정답 유무</h3>
+          <button id="closebtn" style="border: 1px solid blue ; width:130px; height:40px; background: blue; color:white; border-radius: 4px; position: relative; top:150px; left:130px" onclick="closeAlert(this)">닫기</button>
     </div>
   </div>
     <div class="titleBar">
         <img src="img/오늘의 질문.png" style="width: 15%; height: 100px;">
     </div>
-        <header>
+        <header style="z-index: -3;">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                   <span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 1000; margin-left: 5%;">이정도는 알아야 취업하지</span>
