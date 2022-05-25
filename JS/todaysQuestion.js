@@ -1,10 +1,10 @@
 //c 버튼을 누르면 두 질문창과 답변창이 80%로 작아져야됨
 // 질문하고 답을 미리 저장해놨다가 
-const question_OS = ["프로세스와 스레드의 차이?","멀티 스레드의 장점과 단점?","운영 체제 란 무엇입니까?"]
+const question_OS = ["프로세스와 스레드의 차이?","멀티 스레드의 장점과 단점?", "운영 체제 란 무엇입니까?"]
 const question_DataBase = ["스키마란 무엇인가?","관계형 데이터베이스를 설명해보시오"]
 const question_Algorithm = ["시간복잡도란 무엇인가?","스택과 큐의 차이가 무엇인가?"]
 const question_Network = ["TCP/IP?","DNS란 무엇인가?"]
-const answer_OS = [["code","data","heap","최소","작업","단위","인스턴스","메모리","동적","할당"],["하나의", "프로세스", "다수의","여러개", "스레드","교착상태","단위","작업","자원"]
+const answer_OS = [["code","data","heap","최소","작업","단위","인스턴스","메모리","동적","할당"],["하나의", "프로세스", "다수의","여러개", "스레드","교착상태","단위","작업","자원"],
 [ "하드웨어","소프트웨어" ,"통신", "소프트웨어", "프로그램","운영체제"]]
 const answer_DataBase = [["스키마","데이터베이스의 구조","제약조건","명세","메타데이터","데이터 개체","entity","속성","관계"]
 ["테이블","키","값","종속성","관계","레코드","튜플","무결성"]]
@@ -59,7 +59,8 @@ myStorage = window.localStorage;
 $('#open-question-bar').click(()=>{
     if($('.question-bar').css('display')== 'none'){
         $('.main-question-screen').css('width', '80%')
-        $('.main-question-screen').animate({width: '80%'}, 500)
+        //$('.main-question-screen').animate({width: '80%'}, 500)
+        $('.question-bar').css('display','inline-block');
 }
     else{
         $('.main-question-screen').animate({width: '100%'}, 500)
@@ -183,7 +184,6 @@ function closeAlert(창){
     }
 }
 function changeAlert(멘트){
-    
     $('#ment').html(멘트);
 }
 // 맞춘문제 페이지 기록하기
