@@ -124,6 +124,10 @@ table{
     top:200px; 
     left:130px;
 }
+#btn-container{
+    box-sizing: border-box;
+    margin-top: -100px;
+}
 /* 800px 이하 모바일크기 */
 @media(max-width:360px){
     #nav-bar{
