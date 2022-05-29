@@ -1,5 +1,5 @@
 body{
-    min-width: 400px;
+    min-width: 0px;
 }
 .container{
     height: 100%;
@@ -125,7 +125,7 @@ table{
     left:130px;
 }
 /* 800px 이하 모바일크기 */
-@media(max-width:768px){
+@media(max-width:360px){
     #nav-bar{
         width: 768px;
     }
@@ -171,7 +171,21 @@ table{
         right: 100px;
     }
     #btn-container{
-        margin-top: -100px;
+        margin-top: -300px;
     }
+    #answer-board{
+        width: 100%;
+        border: 3px solid lightslategray;
+        border-radius: 7px;
+        margin-bottom: -100px;
+        float: right;
+        display: block;
+    }
+@media(max-width: 1500px) {
+    .navbar-nav{
+        padding-left: 70%;
+    }
+    
+}
     
 }
