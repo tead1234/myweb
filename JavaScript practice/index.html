@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <article>
+            <ul class="btns">
+                <li>bt1</li>
+                <li>bt2</li>
+                <li>bt3</li>
+            </ul>
+        </article>
+        <div class="box" style="width: 100px; height: 100px;  background-color: black">
+        </div>
+        <a href="da" class="btn3" style="background-color: blue; width:50px; border-radius:50%">.</a>
+        <a href="#" class="btnLeft">왼쪽회전</a>
+        <a href="#" class="btnRight">오른쪽회전</a>
+        <div id="box" style="width: 100px; height:100px; margin:50px; background:aqua; transition:0.5s"></div>
+    </section>
+    
+
+<script>
+    const btns = document.querySelectorAll('.btns');
+    const boxs = document.querySelectorAll("section article")
+    const blackBox = document.querySelector('section .box');
+    const link = document.querySelector('.btn3');
+    const btnL = document.querySelector('.btnLeft');
+    const btnR = document.querySelector('.btnRight');
+    const Box = document.querySelector('#box');
+    let num = 0;
+    let deg = 45;
+    
+    btnL.addEventListener("click",e=>{
+        e.preventDefault();
+        console.log("클릭")
+        num --;
+        Box.style.transform = `rotate(${deg*num}deg)`;
+    });
+    btnR.addEventListener("click",e=>{
+        e.preventDefault();
+        console.log("클릭")
+        num ++;
+        Box.style.transform = `rotate(${deg*num}deg)`;
+    });
+
+
+    // boxs는 아티클 태그 전체를 가져와서 반복문 안됨
+    // 아래처럼 쓰면 각 요소를 다 가져옴
+    const boxs2 = document.querySelectorAll(".btns li")
+    link.style.display = "inline-block";
+    for(let el of boxs2){
+        console.log(el)
+    }
+    blackBox.style.width = "300px";
+    
+    
+    for(let i=0; i<btns.length; i++){
+        btns[i].addEventListener('click',e=>{
+            activate(i,btns)
+            activate(i, boxs)
+        })
+    }
+
+    function activate(index, list){
+        for(let el of list){
+            el.classList.remove("on");
+        }
+        list[index].classList.add("on");
+    }
+</script>
+</body>
+</html>
