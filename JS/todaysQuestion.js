@@ -98,7 +98,7 @@ $("#submitAnswer").click(()=>{
             return
         }
         changeAlert("축하합니다.")
-        $(".black-background").css('transform','translateY(-100px)')
+        $(".black-background").css('transform','translateY(2000px)')
         //  답안리스트 == 이놈은 답안
         /// 맞추면 맞춘 갯수를 저장하는건 여기다가 따로 만들어야 할듯
         checkSuccessQuestion(key)
@@ -108,7 +108,7 @@ $("#submitAnswer").click(()=>{
     }else{
         //alert("점수 미달입니다.");
         changeAlert("응 다시해")
-        $(".black-background").css('transform','translateY(-100px)')
+        $(".black-background").css('transform','translateY(2000px)')
 
         update_fail();
     }
@@ -180,7 +180,7 @@ function update_fail(){
 }
 function closeAlert(창){
     if(창.click){
-        $(".black-background").css('transform','translateY(-800px)')
+        $(".black-background").css('transform','translateY(-1000px)')
     }
 }
 function changeAlert(멘트){

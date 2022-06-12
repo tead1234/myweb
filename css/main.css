@@ -92,9 +92,9 @@ table{
 .black-background{
     position: fixed;
     width: 100%;
-    height: 700px;
+    height: 100%;
     z-index: 5;
-    transform: translateY(-800px);
+    transform: translateY(-1000px);
 }
 .white-background{
     background-color: white;
@@ -128,7 +128,7 @@ table{
     box-sizing: border-box;
     margin-top: -100px;
 }
-/* 800px 이하 모바일크기 */
+/* 360px 이하 모바일크기 */
 @media(max-width:360px){
     #nav-bar{
         width: 768px;
@@ -185,9 +185,9 @@ table{
         float: right;
         display: block;
     }
-@media(max-width: 1500px) {
+@media(max-width: 1200px) {
     .navbar-nav{
-        padding-left: 70%;
+        padding-left: 60%;
     }
     
 }
