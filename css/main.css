@@ -186,7 +186,7 @@ table{
         display: block;
     }
 @media(max-width: 1200px) {
-    .navbar-nav{
+    .nav-bar{
         padding-left: 60%;
     }
     
