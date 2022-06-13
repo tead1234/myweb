@@ -258,7 +258,7 @@
         border-radius: 4px; 
         position: absolute; 
         top:50%; 
-        left:50%;
+        left:200px;
     }
     #btn-container{
         box-sizing: border-box;
