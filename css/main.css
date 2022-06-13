@@ -123,8 +123,8 @@
         color:white; 
         border-radius: 4px; 
         position: absolute; 
-        top:200px; 
-        left:130px;
+        top:50%; 
+        left:50%;
     }
     #btn-container{
         box-sizing: border-box;
@@ -257,8 +257,8 @@
         color:white; 
         border-radius: 4px; 
         position: absolute; 
-        top:200px; 
-        left:130px;
+        top:50%; 
+        left:50%;
     }
     #btn-container{
         box-sizing: border-box;
@@ -308,8 +308,8 @@
         color:white; 
         border-radius: 4px; 
         position: absolute; 
-        top:200px; 
-        right: 100px;
+        top:50%; 
+        left:50%;
     }
     #btn-container{
         margin-top: -300px;
