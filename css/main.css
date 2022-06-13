@@ -113,7 +113,7 @@
         position: absolute;
         top:60px;
         size: 50px;
-        left: 15vw;
+        left: 12vw;
     }
     #closebtn{
         border: 1px solid blue ; 
@@ -124,7 +124,7 @@
         border-radius: 4px; 
         position: absolute; 
         top:50%; 
-        left:55%;
+        left:210px;
     }
     #btn-container{
         box-sizing: border-box;
